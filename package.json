@@ -1,19 +1,19 @@
 {
-  "name": "JATE",
+  "name": "jate",
   "version": "1.0.0",
-  "description": "",
+  "description": "JavaScript Text Editor",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "server": "http-server -a localhost -p 3001",
-    "build": "",
-    "install": "",
-    "client": ""
+    "build": "cd server nodemon server.js --ignore client",
+    "install": "cd sercer && npm i && ../client && npm i",
+    "client": "cd client && npm start"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "DylanOzzy",
+  "license": "MIT",
   "dependencies": {
     "-": "^0.0.1",
     "express": "^4.17.1",
@@ -22,5 +22,13 @@
   "devDependencies": {
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanOzzy/JATE-Text-Editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DylanOzzy/JATE-Text-Editor/issues"
+  },
+  "homepage": "https://github.com/DylanOzzy/JATE-Text-Editor#readme"
 }

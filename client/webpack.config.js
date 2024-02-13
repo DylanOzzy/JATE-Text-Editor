@@ -20,16 +20,16 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        filename: 'index.html',
+        filename: 'J.A.T.E.',
       }),
       new WebpackPwaManifest({
-        name: 'JATE',
-        short_name: 'JATE',
-        description: '',
-        start_url: '.',
-        display: 'standalone',
-        background_color: '#ffffff',
-        theme_color: '#31a9e1',
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'J.A.T.E',
+        start_url: '/',
+        publicPath: '/',
         icons: [],
       }),
       new InjectManifest({
@@ -43,6 +43,17 @@ module.exports = () => {
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js#/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          }
         },
       ],
     },
