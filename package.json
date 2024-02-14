@@ -15,9 +15,7 @@
   "author": "DylanOzzy",
   "license": "MIT",
   "dependencies": {
-    "-": "^0.0.1",
-    "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
