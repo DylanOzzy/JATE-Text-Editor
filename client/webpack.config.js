@@ -36,15 +36,10 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
-      new MiniCssExtractPlugin(),
     ],
 
     module: {
       rules: [
-        {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
         {
           test: /\.css$/,
           use: ['style-loader', 'css-loader'],
